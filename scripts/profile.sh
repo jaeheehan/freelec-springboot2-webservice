@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bashps
 
 # 쉬고 있는 profile 찾기 : real1이 사용중이면 real2가 쉬고 있고 , 반대면 real1이 쉬고 있음
 
@@ -10,7 +10,7 @@ function find_idle_profile()
   then
     CURRENT_PROFILE=real2
   else
-    CURRENT_PROFILE=${curl -s http://localhost/profile}
+    CURRENT_PROFILE=$(curl -s http://localhost/profile)
   fi
 
   if [ ${CURRENT_PROFILE} == real1 ]
