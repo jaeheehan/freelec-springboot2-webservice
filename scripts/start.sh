@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-ABSPATH=$(readlink -f \"$0\")
-echo "> abspath === ${ABSPATH}"
-ABSDIR=$(dirname $ABSPATH)
+ABSDIR=$( dirname "$(readlink -f -- "$0")" )
 source ${ABSDIR}/profile.sh
 
 REPOSITORY=/home/ec2-user/app/step3
@@ -21,6 +19,7 @@ echo "> $JAR_NAME 에 실행권한 추가"
 chmod +x $REPOSITORY/zip/*
 
 echo "> $JAR_NAME 실행"
+echo "> $IDLE_PROFILE 프로파일 "
 
 nohup java -jar \
 -Dspring.config.location=classpath:/application.properties,classpath:/application-$IDLE_PROFILE.properties,\

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-ABSPATH=$(reallink -f $0)
-ABSDIR=$(dirname $ABSPATH)
+ABSDIR=$( dirname "$(readlink -f -- "$0")" )
 source $(ABSDIR)/profile.sh
 
 function switch_proxy() {
