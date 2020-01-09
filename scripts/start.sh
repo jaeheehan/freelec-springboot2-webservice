@@ -19,6 +19,9 @@ echo "> $JAR_NAME 에 실행권한 추가"
 chmod +x $REPOSITORY/zip/*
 
 echo "> $JAR_NAME 실행"
+
+IDLE_PROFILE=$(find_idle_profile)
+
 echo "> $IDLE_PROFILE 프로파일 "
 
 nohup java -jar \
