@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ABSDIR=$( dirname "$(readlink -f -- "$0")" )
-source $(ABSDIR)/profile.sh
+source ${ABSDIR}/profile.sh
 
 function switch_proxy() {
   IDLE_PORT=$(find_idle_port)
